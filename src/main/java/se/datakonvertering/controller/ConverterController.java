@@ -2,6 +2,8 @@ package se.datakonvertering.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import se.datakonvertering.service.ConverterService;
@@ -22,25 +24,25 @@ public class ConverterController {
     }
 
 
-    // 🔹 Konvertera JSON till XML (direkt meddelande)
+    @Operation(summary = "Konvertera JSON till XML")
     @PostMapping("/json-to-xml")
     public String jsonToXml(@RequestBody String json) throws IOException {
         return converterService.convertJsonToXml(json);
     }
 
-    // 🔹 Konvertera XML till JSON (direkt meddelande)
+    @Operation(summary = "Konvertera XML till JSON")
     @PostMapping("/xml-to-json")
     public String xmlToJson(@RequestBody String xml) throws IOException {
         return converterService.convertXmlToJson(xml);
     }
 
-    // 🔹 Konvertera JSON från en URL till XML
+    @Operation(summary = "Konvertera JSON till XML ifrån URL")
     @GetMapping("/fetch-json-to-xml")
     public String jsonToXmlFromUrl(@RequestParam String url) throws IOException {
         return converterService.fetchJsonToXml(url);
     }
 
-    // 🔹 Konvertera XML från en URL till JSON
+    @Operation(summary = "Konvertera XML till JSON ifrån URL")
     @GetMapping("/fetch-xml-to-json")
     public String xmlToJsonFromUrl(@RequestParam String url) throws IOException {
         return converterService.fetchXmlToJson(url);
