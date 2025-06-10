@@ -1,0 +1,23 @@
+### Konvertera JSON till XML
+POST http://localhost:8080/api/convert/json-to-xml
+Content-Type: application/json
+
+{
+  "name": "Robin",
+  "age": 30
+}
+
+### Konvertera XML till JSON
+POST http://localhost:8080/api/convert/xml-to-json
+Content-Type: application/xml
+
+<person>
+    <name>Robin</name>
+    <age>30</age>
+</person>
+
+### Konvertera JSON från en URL till XML
+GET http://localhost:8080/api/convert/fetch-json-to-xml?url=https://jsonplaceholder.typicode.com/users/1
+
+### Konvertera XML från en URL till JSON
+GET http://localhost:8080/api/convert/fetch-xml-to-json?url=https://httpbin.org/xml
