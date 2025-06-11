@@ -44,6 +44,10 @@ API-dokumentation finns tillgänglig via Swagger UI när du kör applikationen:
 ```
 http://localhost:8080/swagger-ui.html
 ```
+
+## Testning
+Se http-requests.http för färdiga test-requests
+
 ## Teknologier
 ```
 * Java 21 corretto
